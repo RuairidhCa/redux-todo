@@ -28,6 +28,7 @@ function TodoItem({ index, todo }: ITodoItemProps) {
   function deleteButton_ClickHandler() {
     dispatch(removeTodo({ index }));
   }
+
   return (
     <ListItem button onClick={listItem_ClickHandler}>
       <ListItemIcon>
@@ -35,11 +36,7 @@ function TodoItem({ index, todo }: ITodoItemProps) {
       </ListItemIcon>
       <ListItemText id={`todo-${index}`} primary={todo.text} />
       <ListItemSecondaryAction>
-        <IconButton
-          edge="end"
-          aria-label="delete"
-          onClick={deleteButton_ClickHandler}
-        >
+        <IconButton aria-label="delete" onClick={deleteButton_ClickHandler}>
           <DeleteIcon />
         </IconButton>
       </ListItemSecondaryAction>
