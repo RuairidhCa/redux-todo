@@ -11,7 +11,7 @@ function TodoList({ todos }: ITodoListProps) {
   return (
     <List>
       {todos.map((todo, index) => {
-        return <TodoItem index={index} todo={todo} />;
+        return <TodoItem key={index} index={index} todo={todo} />;
       })}
     </List>
   );

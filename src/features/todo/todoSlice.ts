@@ -13,12 +13,11 @@ export const todoSlice = createSlice({
       state.push(action.payload);
     },
     removeTodo: (state, action) => {
-      console.log(action.payload);
       return state.filter((todo, index) => index !== action.payload.index);
     },
     toggleComplete: (state, action) => {
-      state[action.payload.index].complete = !state[action.payload.index]
-        .complete;
+      state[action.payload.index].complete =
+        !state[action.payload.index].complete;
     },
   },
 });
