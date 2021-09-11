@@ -7,7 +7,7 @@ import {
   ListItemSecondaryAction,
   IconButton,
 } from "@material-ui/core/";
-import DeleteIcon from "@material-ui/icons/Delete";
+import { DeleteOutline as DeleteIcon } from "@material-ui/icons/";
 
 import { useDispatch } from "react-redux";
 
@@ -32,7 +32,7 @@ function TodoItem({ index, todo }: ITodoItemProps) {
   return (
     <ListItem button onClick={listItem_ClickHandler}>
       <ListItemIcon>
-        <Checkbox checked={todo.complete} />
+        <Checkbox color="primary" checked={todo.complete} />
       </ListItemIcon>
       <ListItemText id={`todo-${index}`} primary={todo.text} />
       <ListItemSecondaryAction>

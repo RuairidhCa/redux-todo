@@ -5,15 +5,31 @@ import { selectTodos } from "./todoSlice";
 
 import TodoList from "../../Components/TodoList";
 import AddTodo from "../../Components/AddTodo";
-import { Container } from "@material-ui/core";
+import {
+  Container,
+  createStyles,
+  makeStyles,
+  Paper,
+  Theme,
+} from "@material-ui/core";
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      marginTop: "10px",
+    },
+  })
+);
 
 export default function Todo() {
   const todos = useSelector(selectTodos);
+  const classes = useStyles();
 
   return (
     <Container>
-      <TodoList todos={todos} />
-
+      <Paper className={classes.root}>
+        <TodoList todos={todos} />
+      </Paper>
       <AddTodo />
     </Container>
   );

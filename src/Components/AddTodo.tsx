@@ -12,6 +12,7 @@ import AddIcon from "@material-ui/icons/Add";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+      marginTop: "10px",
       padding: "2px 4px",
       display: "flex",
       alignItems: "center",
