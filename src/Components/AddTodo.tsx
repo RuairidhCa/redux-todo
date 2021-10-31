@@ -43,6 +43,7 @@ function AddTodo() {
   function validateAndDispatch() {
     if (todoText !== "") {
       dispatch(addTodo({ text: todoText, complete: false }));
+      setTodoText("");
     }
   }
 
@@ -65,7 +66,7 @@ function AddTodo() {
         className={classes.input}
         placeholder="New Todo"
         onChange={addTodoInput_ChangeHandler}
-        inputProps={{ "aria-label": "new todo" }}
+        inputProps={{ "aria-label": "new todo", value: todoText }}
         fullWidth
       />
       <Divider orientation="vertical" className={classes.divider} />
